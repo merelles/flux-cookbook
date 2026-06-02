@@ -1,0 +1,19 @@
+[package]
+name = "flux-cookbook"
+version = "0.1.0"
+edition = "2021"
+authors = ["leonardo merelles <leonardo.merelles@zetti.tech>"]
+homepage = "https://github.com/merelles/flux-cookbook"
+license = "MIT"
+description = "Cookbook examples for flux"
+repository = "https://github.com/merelles/flux-cookbook"
+
+[dependencies]
+anyhow = "1"
+dotenvy = "0.15"
+flux = { path = "../flux/flux" }
+flux-mongodb = { path = "../flux/flux-mongodb" }
+flux-postgres = { path = "../flux/flux-postgres" }
+mongodb = "3"
+tokio = { version = "1", features = ["full"] }
+tokio-postgres = { version = "0.7", features = ["with-uuid-1"] }

@@ -1,0 +1,62 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-flux_cookbook}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-flux_cookbook}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - flux_cookbook_postgres:/var/lib/postgresql/data
+
+  mongodb:
+    image: mongo:7
+    ports:
+      - "${MONGO_PORT:-27017}:27017"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "mongosh",
+          "--quiet",
+          "--eval",
+          "db.adminCommand({ ping: 1 }).ok",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - flux_cookbook_mongodb:/data/db
+
+  cookbook:
+    build:
+      context: ..
+      dockerfile: flux-cookbook/Dockerfile
+    environment:
+      MONGO_URI: ${MONGO_URI:-mongodb://mongodb:27017}
+      MONGO_DATABASE: ${MONGO_DATABASE:-flux_cookbook}
+      MONGO_USER_ID: ${MONGO_USER_ID:-665f1b8b0fd3f6d8a8f54a01}
+      POSTGRES_URL: ${POSTGRES_URL:-postgres://postgres:postgres@postgres:5432/flux_cookbook}
+      COOKBOOK_SEED: ${COOKBOOK_SEED:-true}
+      COOKBOOK_USER_NAME: ${COOKBOOK_USER_NAME:-Ada Lovelace}
+      COOKBOOK_USER_EMAIL: ${COOKBOOK_USER_EMAIL:-ada@example.com}
+      COOKBOOK_CONNECT_ATTEMPTS: ${COOKBOOK_CONNECT_ATTEMPTS:-30}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+
+volumes:
+  flux_cookbook_postgres:
+  flux_cookbook_mongodb:
