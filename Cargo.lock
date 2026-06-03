@@ -614,7 +614,7 @@ checksum = "5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582"
 [[package]]
 name = "flux"
 version = "0.1.0"
-source = "git+https://github.com/merelles/flux#f0fc31cc3da262e31750d56ade2160c77c1b5ca3"
+source = "git+https://github.com/merelles/flux#c2e436ec3d7f3dee8bb12cf650f7d6cb0303f331"
 dependencies = [
  "async-stream",
  "async-trait",
@@ -626,9 +626,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "flux-derive"
+version = "0.1.0"
+source = "git+https://github.com/merelles/flux#c2e436ec3d7f3dee8bb12cf650f7d6cb0303f331"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.117",
+]
+
+[[package]]
 name = "flux-mongodb"
 version = "0.1.0"
-source = "git+https://github.com/merelles/flux#f0fc31cc3da262e31750d56ade2160c77c1b5ca3"
+source = "git+https://github.com/merelles/flux#c2e436ec3d7f3dee8bb12cf650f7d6cb0303f331"
 dependencies = [
  "async-trait",
  "chrono",
@@ -638,6 +648,19 @@ dependencies = [
  "rust_decimal",
  "tokio",
  "uuid",
+]
+
+[[package]]
+name = "flux-mongodb-crud-filter"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-mongodb",
+ "mongodb",
+ "tokio",
 ]
 
 [[package]]
@@ -657,13 +680,124 @@ dependencies = [
 [[package]]
 name = "flux-postgres"
 version = "0.1.0"
-source = "git+https://github.com/merelles/flux#f0fc31cc3da262e31750d56ade2160c77c1b5ca3"
+source = "git+https://github.com/merelles/flux#c2e436ec3d7f3dee8bb12cf650f7d6cb0303f331"
 dependencies = [
  "async-trait",
  "chrono",
  "deadpool-postgres",
  "flux",
  "rust_decimal",
+ "tokio",
+ "tokio-postgres",
+ "uuid",
+]
+
+[[package]]
+name = "flux-postgres-bulk"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-postgres",
+ "tokio",
+ "tokio-postgres",
+ "uuid",
+]
+
+[[package]]
+name = "flux-postgres-crud"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-postgres",
+ "tokio",
+ "tokio-postgres",
+ "uuid",
+]
+
+[[package]]
+name = "flux-postgres-generated-id"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-postgres",
+ "tokio",
+ "tokio-postgres",
+]
+
+[[package]]
+name = "flux-postgres-has-many"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-postgres",
+ "tokio",
+ "tokio-postgres",
+ "uuid",
+]
+
+[[package]]
+name = "flux-postgres-has-one"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-postgres",
+ "tokio",
+ "tokio-postgres",
+ "uuid",
+]
+
+[[package]]
+name = "flux-postgres-many-to-many"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-postgres",
+ "tokio",
+ "tokio-postgres",
+ "uuid",
+]
+
+[[package]]
+name = "flux-postgres-pagination-filter"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-postgres",
+ "tokio",
+ "tokio-postgres",
+ "uuid",
+]
+
+[[package]]
+name = "flux-postgres-transaction-rollback"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-postgres",
  "tokio",
  "tokio-postgres",
  "uuid",

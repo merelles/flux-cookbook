@@ -1,0 +1,17 @@
+[package]
+name = "flux-postgres-generated-id"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+homepage.workspace = true
+license.workspace = true
+description = "Flux PostgreSQL generated ID example"
+repository.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+dotenvy.workspace = true
+flux.workspace = true
+flux-postgres.workspace = true
+tokio.workspace = true
+tokio-postgres.workspace = true

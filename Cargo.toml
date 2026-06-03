@@ -1,6 +1,15 @@
 [workspace]
 members = [
+    "examples/mongodb-crud-filter",
     "examples/mongodb-to-postgres",
+    "examples/postgres-bulk",
+    "examples/postgres-crud",
+    "examples/postgres-generated-id",
+    "examples/postgres-has-many",
+    "examples/postgres-has-one",
+    "examples/postgres-many-to-many",
+    "examples/postgres-pagination-filter",
+    "examples/postgres-transaction-rollback",
 ]
 resolver = "2"
 
@@ -16,8 +25,11 @@ repository = "https://github.com/merelles/flux"
 anyhow = "1"
 dotenvy = "0.15"
 flux = { git = "https://github.com/merelles/flux", package = "flux" }
+flux-derive = { git = "https://github.com/merelles/flux", package = "flux-derive" }
 flux-mongodb = { git = "https://github.com/merelles/flux", package = "flux-mongodb" }
 flux-postgres = { git = "https://github.com/merelles/flux", package = "flux-postgres" }
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
 mongodb = "3"
 tokio = { version = "1", features = ["full"] }
 tokio-postgres = { version = "0.7", features = ["with-uuid-1"] }
+uuid = { version = "1", features = ["v4", "serde"] }
