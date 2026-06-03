@@ -1,14 +1,18 @@
-[package]
-name = "flux-mongodb-to-postgres"
+[workspace]
+members = [
+    "examples/mongodb-to-postgres",
+]
+resolver = "2"
+
+[workspace.package]
 version = "0.1.0"
 edition = "2021"
 authors = ["leonardo merelles <leonardo.merelles@zetti.tech>"]
 homepage = "https://github.com/merelles/flux"
 license = "MIT"
-description = "Executable Flux example that copies data from MongoDB to PostgreSQL"
 repository = "https://github.com/merelles/flux"
 
-[dependencies]
+[workspace.dependencies]
 anyhow = "1"
 dotenvy = "0.15"
 flux = { git = "https://github.com/merelles/flux", package = "flux" }
