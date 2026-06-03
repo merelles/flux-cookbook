@@ -1,0 +1,19 @@
+[package]
+name = "flux-postgres-graph-delete"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+homepage.workspace = true
+license.workspace = true
+description = "Flux PostgreSQL graph delete example"
+repository.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+dotenvy.workspace = true
+flux.workspace = true
+flux-derive.workspace = true
+flux-postgres.workspace = true
+tokio.workspace = true
+tokio-postgres.workspace = true
+uuid.workspace = true

@@ -5,6 +5,8 @@ members = [
     "examples/postgres-bulk",
     "examples/postgres-crud",
     "examples/postgres-generated-id",
+    "examples/postgres-graph-delete",
+    "examples/postgres-graph-save",
     "examples/postgres-has-many",
     "examples/postgres-has-one",
     "examples/postgres-many-to-many",

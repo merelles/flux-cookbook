@@ -11,6 +11,8 @@ Each example is its own crate under `examples/`. This keeps scenarios isolated a
 - `examples/postgres-bulk`: PostgreSQL bulk write operations.
 - `examples/postgres-crud`: basic PostgreSQL repository operations.
 - `examples/postgres-generated-id`: PostgreSQL database-generated IDs.
+- `examples/postgres-graph-delete`: PostgreSQL graph delete with cascade metadata.
+- `examples/postgres-graph-save`: PostgreSQL graph insert, replace, and load.
 - `examples/postgres-has-many`: one-to-many aggregate persistence.
 - `examples/postgres-has-one`: one-to-one aggregate persistence.
 - `examples/postgres-many-to-many`: many-to-many aggregate persistence.

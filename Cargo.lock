@@ -733,6 +733,34 @@ dependencies = [
 ]
 
 [[package]]
+name = "flux-postgres-graph-delete"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-postgres",
+ "tokio",
+ "tokio-postgres",
+ "uuid",
+]
+
+[[package]]
+name = "flux-postgres-graph-save"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-postgres",
+ "tokio",
+ "tokio-postgres",
+ "uuid",
+]
+
+[[package]]
 name = "flux-postgres-has-many"
 version = "0.1.0"
 dependencies = [
