@@ -651,7 +651,98 @@ dependencies = [
 ]
 
 [[package]]
+name = "flux-mongodb-bulk"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-mongodb",
+ "mongodb",
+ "tokio",
+]
+
+[[package]]
 name = "flux-mongodb-crud-filter"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-mongodb",
+ "mongodb",
+ "tokio",
+]
+
+[[package]]
+name = "flux-mongodb-graph-delete"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-mongodb",
+ "mongodb",
+ "tokio",
+]
+
+[[package]]
+name = "flux-mongodb-graph-save"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-mongodb",
+ "mongodb",
+ "tokio",
+]
+
+[[package]]
+name = "flux-mongodb-has-many"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-mongodb",
+ "mongodb",
+ "tokio",
+]
+
+[[package]]
+name = "flux-mongodb-has-one"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-mongodb",
+ "mongodb",
+ "tokio",
+]
+
+[[package]]
+name = "flux-mongodb-many-to-many"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-mongodb",
+ "mongodb",
+ "tokio",
+]
+
+[[package]]
+name = "flux-mongodb-pagination-filter"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -675,6 +766,19 @@ dependencies = [
  "mongodb",
  "tokio",
  "tokio-postgres",
+]
+
+[[package]]
+name = "flux-mongodb-transaction-rollback"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "dotenvy",
+ "flux",
+ "flux-derive",
+ "flux-mongodb",
+ "mongodb",
+ "tokio",
 ]
 
 [[package]]

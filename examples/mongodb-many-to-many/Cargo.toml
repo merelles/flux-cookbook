@@ -1,0 +1,18 @@
+[package]
+name = "flux-mongodb-many-to-many"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+homepage.workspace = true
+license.workspace = true
+description = "Flux MongoDB many-to-many aggregate example"
+repository.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+dotenvy.workspace = true
+flux.workspace = true
+flux-derive.workspace = true
+flux-mongodb.workspace = true
+mongodb.workspace = true
+tokio.workspace = true

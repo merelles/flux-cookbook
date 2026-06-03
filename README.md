@@ -7,7 +7,15 @@ Each example is its own crate under `examples/`. This keeps scenarios isolated a
 ## Examples
 
 - `examples/mongodb-crud-filter`: MongoDB repository basics with filters and pagination.
+- `examples/mongodb-bulk`: MongoDB bulk write operations.
+- `examples/mongodb-graph-delete`: MongoDB graph delete with cascade metadata.
+- `examples/mongodb-graph-save`: MongoDB graph insert, replace, and load.
+- `examples/mongodb-has-many`: one-to-many aggregate persistence with MongoDB.
+- `examples/mongodb-has-one`: one-to-one aggregate persistence with MongoDB.
+- `examples/mongodb-many-to-many`: many-to-many aggregate persistence with MongoDB.
+- `examples/mongodb-pagination-filter`: MongoDB pagination and filter AST usage.
 - `examples/mongodb-to-postgres`: copies a user from MongoDB into PostgreSQL.
+- `examples/mongodb-transaction-rollback`: MongoDB aggregate rollback behavior.
 - `examples/postgres-bulk`: PostgreSQL bulk write operations.
 - `examples/postgres-crud`: basic PostgreSQL repository operations.
 - `examples/postgres-generated-id`: PostgreSQL database-generated IDs.

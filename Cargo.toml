@@ -1,7 +1,15 @@
 [workspace]
 members = [
+    "examples/mongodb-bulk",
     "examples/mongodb-crud-filter",
+    "examples/mongodb-graph-delete",
+    "examples/mongodb-graph-save",
+    "examples/mongodb-has-many",
+    "examples/mongodb-has-one",
+    "examples/mongodb-many-to-many",
+    "examples/mongodb-pagination-filter",
     "examples/mongodb-to-postgres",
+    "examples/mongodb-transaction-rollback",
     "examples/postgres-bulk",
     "examples/postgres-crud",
     "examples/postgres-generated-id",
