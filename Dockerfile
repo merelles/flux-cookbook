@@ -2,14 +2,9 @@ FROM rust:1-bookworm AS builder
 
 WORKDIR /app
 
-COPY flux/Cargo.toml flux/Cargo.lock ./flux/
-COPY flux/flux ./flux/flux
-COPY flux/flux-derive ./flux/flux-derive
-COPY flux/flux-postgres ./flux/flux-postgres
-COPY flux/flux-mongodb ./flux/flux-mongodb
-COPY flux-cookbook ./flux-cookbook
+COPY . ./flux-mongodb-to-postgres
 
-WORKDIR /app/flux-cookbook
+WORKDIR /app/flux-mongodb-to-postgres
 
 RUN cargo build --release
 
@@ -21,6 +16,6 @@ RUN apt-get update \
 
 WORKDIR /app
 
-COPY --from=builder /app/target/release/flux-cookbook /usr/local/bin/flux-cookbook
+COPY --from=builder /app/flux-mongodb-to-postgres/target/release/flux-mongodb-to-postgres /usr/local/bin/flux-mongodb-to-postgres
 
-CMD ["flux-cookbook"]
+CMD ["flux-mongodb-to-postgres"]

@@ -1,19 +1,19 @@
 [package]
-name = "flux-cookbook"
+name = "flux-mongodb-to-postgres"
 version = "0.1.0"
 edition = "2021"
 authors = ["leonardo merelles <leonardo.merelles@zetti.tech>"]
-homepage = "https://github.com/merelles/flux-cookbook"
+homepage = "https://github.com/merelles/flux"
 license = "MIT"
-description = "Cookbook examples for flux"
-repository = "https://github.com/merelles/flux-cookbook"
+description = "Executable Flux example that copies data from MongoDB to PostgreSQL"
+repository = "https://github.com/merelles/flux"
 
 [dependencies]
 anyhow = "1"
 dotenvy = "0.15"
-flux = { path = "../flux/flux" }
-flux-mongodb = { path = "../flux/flux-mongodb" }
-flux-postgres = { path = "../flux/flux-postgres" }
+flux = { git = "https://github.com/merelles/flux", package = "flux" }
+flux-mongodb = { git = "https://github.com/merelles/flux", package = "flux-mongodb" }
+flux-postgres = { git = "https://github.com/merelles/flux", package = "flux-postgres" }
 mongodb = "3"
 tokio = { version = "1", features = ["full"] }
 tokio-postgres = { version = "0.7", features = ["with-uuid-1"] }

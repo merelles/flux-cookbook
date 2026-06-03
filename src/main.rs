@@ -212,9 +212,9 @@ impl CookbookConfig {
                 "POSTGRES_URL",
                 "postgres://postgres:postgres@localhost:5432/flux_cookbook",
             ),
-            seed: env_or("COOKBOOK_SEED", "true").eq_ignore_ascii_case("true"),
-            seed_name: env_or("COOKBOOK_USER_NAME", "Ada Lovelace"),
-            seed_email: env_or("COOKBOOK_USER_EMAIL", "ada@example.com"),
+            seed: env_or("MONGO_TO_POSTGRES_SEED", "true").eq_ignore_ascii_case("true"),
+            seed_name: env_or("MONGO_TO_POSTGRES_USER_NAME", "Ada Lovelace"),
+            seed_email: env_or("MONGO_TO_POSTGRES_USER_EMAIL", "ada@example.com"),
         })
     }
 }
@@ -268,7 +268,7 @@ where
     Fut: std::future::Future<Output = std::result::Result<T, E>>,
     F: FnMut() -> Fut,
 {
-    let attempts = env_or("COOKBOOK_CONNECT_ATTEMPTS", "30")
+    let attempts = env_or("MONGO_TO_POSTGRES_CONNECT_ATTEMPTS", "30")
         .parse::<u32>()
         .unwrap_or(30);
 

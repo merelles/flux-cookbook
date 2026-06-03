@@ -38,19 +38,19 @@ services:
     volumes:
       - flux_cookbook_mongodb:/data/db
 
-  cookbook:
+  mongodb-to-postgres:
     build:
-      context: ..
-      dockerfile: flux-cookbook/Dockerfile
+      context: .
+      dockerfile: Dockerfile
     environment:
       MONGO_URI: ${MONGO_URI:-mongodb://mongodb:27017}
       MONGO_DATABASE: ${MONGO_DATABASE:-flux_cookbook}
       MONGO_USER_ID: ${MONGO_USER_ID:-665f1b8b0fd3f6d8a8f54a01}
       POSTGRES_URL: ${POSTGRES_URL:-postgres://postgres:postgres@postgres:5432/flux_cookbook}
-      COOKBOOK_SEED: ${COOKBOOK_SEED:-true}
-      COOKBOOK_USER_NAME: ${COOKBOOK_USER_NAME:-Ada Lovelace}
-      COOKBOOK_USER_EMAIL: ${COOKBOOK_USER_EMAIL:-ada@example.com}
-      COOKBOOK_CONNECT_ATTEMPTS: ${COOKBOOK_CONNECT_ATTEMPTS:-30}
+      MONGO_TO_POSTGRES_SEED: ${MONGO_TO_POSTGRES_SEED:-true}
+      MONGO_TO_POSTGRES_USER_NAME: ${MONGO_TO_POSTGRES_USER_NAME:-Ada Lovelace}
+      MONGO_TO_POSTGRES_USER_EMAIL: ${MONGO_TO_POSTGRES_USER_EMAIL:-ada@example.com}
+      MONGO_TO_POSTGRES_CONNECT_ATTEMPTS: ${MONGO_TO_POSTGRES_CONNECT_ATTEMPTS:-30}
     depends_on:
       postgres:
         condition: service_healthy
